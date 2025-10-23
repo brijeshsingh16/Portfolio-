@@ -364,7 +364,7 @@ form .btn2 {
   outline: none;
 }
 
-/* Responsive */
+/* Responsive 
 @media only screen and (max-width: 600px) {
   #header {
     background-image: url("");
@@ -386,4 +386,5 @@ form .btn2 {
     padding: 0;
     width: 100%;
   }
-}
+}*/
+
