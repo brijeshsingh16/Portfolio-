@@ -16,6 +16,7 @@
         <!-- Left name glow -->
         <h1 class="name-glow">Brijesh</h1>
         <ul>
+		  <div class="menu-toggle" id="menu-toggle">&#9776;</div>
           <li><a href="#header">Home</a></li>
           <li><a href="#about">About Us</a></li>
           <li><a href="#services">Services</a></li>
@@ -196,10 +197,18 @@
     backToTopBtn.addEventListener("click", function () {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
+	
+	// Toggle mobile menu
+const menuToggle = document.getElementById('menu-toggle');
+const navLinks = document.querySelector('nav ul');
+
+menuToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('show');
+});
+
   </script>
 </body>
 </html>
-
 
 
 
