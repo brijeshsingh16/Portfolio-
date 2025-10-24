@@ -43,11 +43,11 @@ nav {
       transition: all 0.4s ease;
     }
 
-    name-glow:hover {
-      border-color: #ffeb3b; /* yellow border */
-      box-shadow: 0 0 20px #ffeb3b; /* glowing yellow border */
-      transform: scale(1.03);
-    }
+    .name-glow:hover {
+  border-color: #ffeb3b;
+  box-shadow: 0 0 20px #ffeb3b;
+  transform: scale(1.03);
+}
 nav ul {
   padding: 0;
   margin: 0;
@@ -400,6 +400,7 @@ form .btn2 {
     width: 100%;
   }
 }
+
 
 
 
