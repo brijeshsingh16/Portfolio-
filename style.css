@@ -33,7 +33,7 @@ nav {
   flex-wrap: wrap;
 }
 /*Left name glow*/
-h1 {
+.name-glow {
       font-size: 20px;
       font-weight: 200;
       color: #ffffff;
@@ -43,7 +43,7 @@ h1 {
       transition: all 0.4s ease;
     }
 
-    h1:hover {
+    name-glow:hover {
       border-color: #ffeb3b; /* yellow border */
       box-shadow: 0 0 20px #ffeb3b; /* glowing yellow border */
       transform: scale(1.03);
@@ -400,5 +400,6 @@ form .btn2 {
     width: 100%;
   }
 }
+
 
 
