@@ -35,10 +35,10 @@ nav {
 /*Left name glow*/
 .name-glow {
       font-size: 20px;
-      font-weight: 200;
+      /*font-weight: 200;*/
       color: #ffffff;
       border: 2px solid #2196f3; /* blue border */
-      padding: 10px 60px;
+      padding: 10px 50px;
       border-radius: 10px;
       transition: all 0.4s ease;
     }
@@ -400,6 +400,7 @@ form .btn2 {
     width: 100%;
   }
 }
+
 
 
 
