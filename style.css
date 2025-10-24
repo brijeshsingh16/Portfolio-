@@ -32,9 +32,22 @@ nav {
   justify-content: space-between;
   flex-wrap: wrap;
 }
-.logo {
-  width: 140px;
-}
+/*Left name glow*/
+h1 {
+      font-size: 20px;
+      font-weight: 200;
+      color: #ffffff;
+      border: 2px solid #2196f3; /* blue border */
+      padding: 10px 60px;
+      border-radius: 10px;
+      transition: all 0.4s ease;
+    }
+
+    h1:hover {
+      border-color: #ffeb3b; /* yellow border */
+      box-shadow: 0 0 20px #ffeb3b; /* glowing yellow border */
+      transform: scale(1.03);
+    }
 nav ul {
   padding: 0;
   margin: 0;
@@ -387,4 +400,5 @@ form .btn2 {
     width: 100%;
   }
 }
+
 
