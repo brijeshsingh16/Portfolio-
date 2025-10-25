@@ -34,16 +34,16 @@ nav {
 }
 /*Left name glow*/
 .name-glow {
-      font-size: 20px;
-      /*font-weight: 200;*/
-      color: #ffffff;
-      border: 2px solid #2196f3; /* blue border */
-      padding: 10px 50px;
-      border-radius: 10px;
-      transition: all 0.4s ease;
-    }
+  font-size: 20px;
+  /*font-weight: 200;*/
+  color: #ffffff;
+  border: 2px solid #2196f3; /* blue border */
+  padding: 10px 50px;
+  border-radius: 10px;
+  transition: all 0.4s ease;
+}
 
-    .name-glow:hover {
+.name-glow:hover {
   border-color: #ffeb3b;
   box-shadow: 0 0 20px #ffeb3b;
   transform: scale(1.03);
@@ -154,6 +154,19 @@ nav ul li a:focus::after {
 .tab-contents.active-tab {
   display: block;
 }
+
+/* --- JUSTIFICATION CHANGES --- */
+/* Target all relevant paragraph and list elements for justification */
+#about p,
+.services-list div p,
+.layer p {
+  text-align: justify; /* Apply justification to main text */
+}
+/* Ensure education and skills list content also justifies */
+.tab-contents ul li {
+  text-align: justify;
+}
+/* ----------------------------- */
 
 /* Services Section */
 .services {
@@ -377,31 +390,6 @@ form .btn2 {
   outline: none;
 }
 
-/* Responsive
-@media only screen and (max-width: 600px) {
-  #header {
-    background-image: url("");
-  }
-  .row {
-    flex-direction: column;
-  }
-  .about-col-1,
-  .about-col-2,
-  .contact-left,
-  .contact-right {
-    flex-basis: 100%;
-  }
-  nav ul li {
-    margin: 10px 10px;
-  }
-  nav ul {
-    text-align: center;
-    padding: 0;
-    width: 100%;
-  }
-}*/
-
-/*gpt*/
 /* Hamburger icon (hidden on desktop) */
 .menu-toggle {
   display: none;
@@ -514,9 +502,7 @@ h1, h2, h3, p {
 }
 #msg
 {
-	color:#61b752;
-	margin-top:-40px;
-	display:block;
+  color:#61b752;
+  margin-top:-40px;
+  display:block;
 }
-
-
