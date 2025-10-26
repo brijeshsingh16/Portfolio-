@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCA Course Notes: Computer Application Basics | Brijesh Singh</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS variables for consistent theming */
+        :root {
+            --primary-color: #0077b6; /* Deep Blue */
+            --secondary-color: #00b4d8; /* Light Blue */
+            --text-color: #333;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --footer-bg: #2c3e50;
+            --footer-text: #ecf0f1;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            text-align: justify; 
+            /* Default font size for better readability on desktop */
+            font-size: 16px; 
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-bottom: 20px;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        /* Main Section Headings */
+        h2 {
+            font-size: 1.8em;
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        /* Sub-headings */
+        h3 {
+            font-size: 1.4em;
+            color: #1a1a1a;
+            margin-top: 30px;
+            border-left: 5px solid var(--secondary-color);
+            padding-left: 15px;
+        }
+
+        h4 {
+            font-size: 1.1em;
+            color: var(--primary-color);
+            margin-top: 20px;
+        }
+        
+        /* Content Card Styling */
+        .content-card {
+            background-color: var(--card-bg);
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .content-card:hover {
+            transform: translateY(-5px); 
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        ul, ol {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .key-feature {
+            background-color: #e9f5ff;
+            border-left: 4px solid var(--secondary-color);
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+        
+        /* Footer Styling */
+        .footer {
+            background-color: var(--footer-bg);
+            color: var(--footer-text);
+            padding: 30px 20px;
+            text-align: center;
+            margin-top: 40px;
+            border-top: 5px solid var(--secondary-color);
+        }
+
+        .footer p {
+            margin: 5px 0;
+            font-size: 0.9em;
+        }
+        
+        /* ------------------------------------------- */
+        /* RESPONSIVE DESIGN: MOBILE (Max-width: 768px) */
+        /* ------------------------------------------- */
+        @media (max-width: 768px) {
+            body {
+                /* Slightly smaller base font size for mobile */
+                font-size: 15px; 
+            }
+            .container {
+                /* Reduce side padding for better use of screen space */
+                padding: 10px; 
+            }
+            header {
+                padding: 30px 10px;
+            }
+            header h1 {
+                /* Smaller header text for mobile */
+                font-size: 1.8em; 
+            }
+            header p {
+                font-size: 1em;
+            }
+            
+            h2 {
+                font-size: 1.5em; /* Smaller main heading */
+                margin-top: 30px;
+                margin-bottom: 15px;
+            }
+            
+            h3 {
+                font-size: 1.2em; /* Smaller sub-heading */
+                margin-top: 20px;
+                padding-left: 10px;
+            }
+
+            h4 {
+                font-size: 1em;
+                margin-top: 15px;
+            }
+            
+            .content-card {
+                padding: 15px; /* Reduced card padding */
+                margin-bottom: 15px;
+            }
+            
+            ul, ol {
+                padding-left: 15px; /* Reduced list indent */
+            }
+
+            .key-feature {
+                padding: 10px;
+                font-size: 0.95em;
+            }
+            
+            .footer {
+                padding: 20px 10px;
+            }
+        }
+
+        /* ------------------------------------------- */
+        /* RESPONSIVE DESIGN: TABLET/SMALL LAPTOP (769px to 1024px) */
+        /* ------------------------------------------- */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .container {
+                /* Maintain some padding on slightly larger screens */
+                padding: 15px;
+            }
+            header h1 {
+                font-size: 2.2em;
+            }
+            h2 {
+                font-size: 1.7em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CCA Course Notes: Computer Application Basics</h1>
+        <p>Detailed breakdown of computer hardware, peripherals, system architecture, and core software applications.</p>
+    </header>
+
+    <main class="container">
+        
+        <div class="content-card">
+            <h2>Central Processing Unit (CPU)</h2>
+            <p>The CPU is considered the **brain of the computer**. It performs all data processing operations, stores data, intermediate results, and instructions, and controls the operation of all other parts of the computer.</p>
+
+            <h3>Components of the CPU</h3>
+            <ul>
+                <li>**Memory or Storage Unit:** Stores instructions, data, and intermediate results. Supplies information to other units when needed.</li>
+                <li>**Control Unit (CU):** Responsible for controlling the transfer of data and instructions, managing and coordinating all units, and interpreting instructions. **It does not process or store data.**</li>
+                <li>**ALU (Arithmetic Logic Unit):** Consists of two subsections:
+                    <ul>
+                        <li>**Arithmetic Section:** Performs operations like addition, subtraction, multiplication, and division.</li>
+                        <li>**Logic Section:** Performs logic operations such as comparing, selecting, matching, and merging data.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="content-card">
+            <h2>Input Unit and Devices</h2>
+            <p>The Input Unit contains devices used to enter data into the computer. These devices translate information into a form understandable by the computer.</p>
+            
+            <h3>Common Input Devices</h3>
+            <ul>
+                <li>**Keyboard:** Most popular input device; used for inputting text and data.</li>
+                <li>**Mouse:** Popular pointing device; controls cursor position but cannot enter text.</li>
+                <li>**Joystick:** Pointing device used mainly in Computer Aided Designing (CAD) and computer games.</li>
+                <li>**Scanner:** Works like a photocopy machine to transfer paper-based information to the hard disk for manipulation (Types: Flatbed, Sheet-Fed, Handheld, Drum).</li>
+                <li>**Microphone:** Inputs sound, which is stored in digital form.</li>
+            </ul>
+            
+            <h3>Specialized Input Devices</h3>
+            <ul>
+                <li>**Light Pen:** Pointing device used to select menu items or draw pictures on screen.</li>
+                <li>**Track Ball:** Input device mostly used in notebook or laptop computers instead of a mouse.</li>
+                <li>**Digitizer:** Converts analog information (like signals from a camera) into digital form.</li>
+                <li>**MICR (Magnetic Ink Card Reader):** Used in banks to process cheques printed with magnetic ink.</li>
+                <li>**OCR (Optical Character Reader):** Reads printed text optically, converting characters into machine-readable code.</li>
+                <li>**OMR (Optical Mark Reader):** Used to recognize marks made by pen or pencil, typically for checking multiple-choice answer sheets.</li>
+            </ul>
+        </div>
+
+        <div class="content-card">
+            <h2>Output Unit and Devices</h2>
+            <p>The Output Unit consists of devices used to get information from the computer. These devices translate the computer's output into a form understandable by users.</p>
+            
+            <h3>Visual Output Devices</h3>
+            <ul>
+                <li>**Monitors (VDU):** Main output device (Types: CRT - large, high power; Flat Panel - LCD/LED - slim, modern).</li>
+                <li>**Projector:** Uses light and lenses to project a magnified image onto a larger screen or wall.</li>
+            </ul>
+
+            <h3>Printers</h3>
+            <p>Used to print information on paper.</p>
+            <h4>Impact Printers</h4>
+            <p>Print characters by striking them on an ink ribbon pressed onto the paper (Noisy, Low cost, Useful for bulk printing).</p>
+            <ul>
+                <li>**Dot Matrix Printer (DMP):** Prints characters as a pattern of dots. (Inexpensive, Slow Speed).</li>
+                <li>**Line Printer:** High-speed printer used with large computer systems for text-based reports (100 to 3800 lines per minute).</li>
+            </ul>
+            <h4>Non-Impact Printers</h4>
+            <p>Print without striking a ribbon; print a complete page at a time (Faster, Quieter, High quality).</p>
+            <ul>
+                <li>**Laser Printer:** Produces high-quality, fast, and quiet print (up to 200 pages per minute).</li>
+                <li>**Ink-Jet Printer:** Creates images by spraying ink through tiny nozzles onto paper.</li>
+            </ul>
+            
+            <h3>Other Output Devices</h3>
+            <ul>
+                <li>**Plotter:** Special output device designed to produce large drawings or images, such as construction plans or blueprints.</li>
+                <li>**Speaker:** Allows users to listen to sound, music, and voice output.</li>
+            </ul>
+        </div>
+
+        <div class="content-card">
+            <h2>Memory and Storage Hierarchy</h2>
+            
+            <h3>Cache Memory</h3>
+            <p>A very high-speed semiconductor memory that acts as a buffer between the CPU and main memory. It stores parts of data and programs most frequently used by the CPU to speed up processing.</p>
+            
+            <h3>Primary Memory (Main Memory)</h3>
+            <p>Holds only the data and instructions on which the computer is **currently working**. It is **volatile** (data lost when power is off) and faster than secondary memory. A computer cannot run without it.</p>
+            <ul>
+                <li>**RAM (Random Access Memory):** Read/write memory.
+                    <ul>
+                        <li>**SRAM (Static RAM):** Data stored in transistors; doesn't need refreshing (used in cache). Low power, faster access.</li>
+                        <li>**DRAM (Dynamic RAM):** Data stored in capacitors; requires periodic refreshing (used in main memory). Low cost, greater capacity.</li>
+                    </ul>
+                </li>
+                <li>**ROM (Read Only Memory):** Non-volatile memory (information stored permanently during manufacture). Stores instructions required to start a computer.
+                    <ul>
+                        <li>Types include PROM, EPROM, and EEPROM.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>Secondary Memory (External/Backup)</h3>
+            <p>Used for storing data/information **permanently**. It is **non-volatile** and slower than primary memory.</p>
+            <ul>
+                <li>**Examples:** Hard Disk (Local/External), Magnetic Tape, Optical Disks (CD, DVD), Pen Drive, Memory Cards.</li>
+            </ul>
+
+            <h3>Memory Storage Units</h3>
+            <div class="key-feature">
+                **Bit (Binary Digit):** Logical 0 and 1.<br>
+                **Nibble:** 4 Bits<br>
+                **Byte:** 8 Bits<br>
+                **Kilobyte (KB):** $1024$ Bytes<br>
+                **Megabyte (MB):** $1024$ KB<br>
+                **Gigabyte (GB):** $1024$ MB<br>
+                **Terabyte (TB):** $1024$ GB
+            </div>
+        </div>
+        
+        <div class="content-card">
+            <h2>Software Concepts</h2>
+            <p>Software is the collection of data and computer instructions that tells the computer **how to work**. It is the non-tangible part of the system that makes the hardware perform useful tasks.</p>
+
+            <h3>System Software</h3>
+            <p>Software designed to **manage and control** the computer's hardware and application programs. It provides the base for all other software to run.</p>
+            <ul>
+                <li>**Operating System (OS):** The most important program; acts as an intermediary between the user and the computer hardware (e.g., Windows, macOS, Linux).</li>
+                <li>**Utility Programs:** Assist in maintaining the computer, such as Antivirus, Disk Defragmenter, and Backup tools.</li>
+                <li>**Language Processors (Compilers/Interpreters):** Convert high-level programming code into machine-readable code.</li>
+            </ul>
+
+            <h3>Application Software</h3>
+            <p>Programs designed to perform a specific task or group of tasks for the **end-user**. It helps in performing daily productivity work.</p>
+            <ul>
+                <li>**General Purpose:** Used for common tasks (e.g., MS Word, Excel, Web Browsers, Media Players).</li>
+                <li>**Customized/Specific Purpose:** Developed for a particular organization or task (e.g., Railway reservation system, Inventory management software).</li>
+            </ul>
+        </div>
+        
+        <div class="content-card">
+            <h2>Operating System (OS) Basics</h2>
+            <p>The **Operating System** is the primary program that manages all the computer's resources, including hardware and software. It's the environment in which all applications run.</p>
+
+            <h3>Core Functions of an OS</h3>
+            <ul>
+                <li>**Memory Management:** Allocates and de-allocates memory space for programs.</li>
+                <li>**Process Management:** Manages the tasks (processes) running on the CPU.</li>
+                <li>**Device Management:** Controls all I/O devices through drivers.</li>
+                <li>**File Management:** Organizes, stores, retrieves, and protects files and directories.</li>
+                <li>**Security:** Protects the system from unauthorized access using passwords and other techniques.</li>
+            </ul>
+
+            <h3>Types of OS (Based on User Interaction)</h3>
+            <ul>
+                <li>**Single-User OS:** Allows only one user to work on the system at a time (e.g., early versions of Windows, DOS).</li>
+                <li>**Multi-User OS:** Allows multiple users to use the same computer simultaneously (e.g., Linux, Unix, Server editions of Windows).</li>
+                <li>**Multitasking OS:** Allows a single user to run multiple programs or tasks concurrently (e.g., modern Windows and macOS).</li>
+            </ul>
+        </div>
+        
+        <div class="content-card">
+            <h2>File and Folder Management</h2>
+            <p>Effective management of files and folders is crucial for organization and retrieval of information on a computer system.</p>
+
+            <h3>Files and Folders (Directories)</h3>
+            <ul>
+                <li>**File:** A collection of related information stored under a single name (e.g., `report.docx`, `photo.jpg`).</li>
+                <li>**Folder (Directory):** A container used to logically group related files and other folders together.</li>
+            </ul>
+
+            <h3>File Naming Conventions and Extensions</h3>
+            <ul>
+                <li>A file name typically consists of a **Primary Name** and an **Extension**, separated by a dot (`.`).</li>
+                <li>The **Extension** (e.g., `.docx`, `.pdf`, `.mp3`) indicates the file type and the application required to open it.</li>
+                <li>**Common Extensions:**
+                    <ul>
+                        <li>`.docx`: Microsoft Word Document</li>
+                        <li>`.xlsx`: Microsoft Excel Spreadsheet</li>
+                        <li>`.pptx`: Microsoft PowerPoint Presentation</li>
+                        <li>`.pdf`: Portable Document Format (Adobe)</li>
+                        <li>`.jpg`, `.png`: Image files</li>
+                        <li>`.exe`: Executable program file</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <h3>Basic File Operations</h3>
+            <ol>
+                <li>**Creating:** Making a new file or folder.</li>
+                <li>**Saving:** Storing a file permanently to a storage device (Hard Disk).</li>
+                <li>**Copying & Moving:** Duplicating a file or transferring it to a new location.</li>
+                <li>**Renaming:** Changing the name of an existing file or folder.</li>
+                <li>**Deleting:** Removing a file or folder from the storage device.</li>
+            </ol>
+        </div>
+
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Brijesh Singh: Computer Science Resource. All Rights Reserved.</p>
+            <p>CCA: Building a strong foundation in computer application skills.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MS Office Course Notes: Basic to Advanced | Brijesh Singh</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS variables for consistent theming */
+        :root {
+            --primary-color: #0077b6; /* Deep Blue */
+            --secondary-color: #00b4d8; /* Light Blue */
+            --text-color: #333;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --footer-bg: #2c3e50;
+            --footer-text: #ecf0f1;
+            --advanced-bg: #f0f8ff; /* Light blue background for advanced tips */
+            --tabs-bg: #fff0f5; /* Very light pink/purple for tab sections */
+            --ms-word-color: #2a5894;
+            --ms-excel-color: #1f7243;
+            --ms-powerpoint-color: #d14423;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            /* REMOVED: text-align: justify for better screen readability */
+            text-align: left; 
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-bottom: 20px;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        /* Main Section Headings */
+        h2 {
+            font-size: 1.8em;
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        /* Sub-headings */
+        h3 {
+            font-size: 1.4em;
+            color: #1a1a1a;
+            margin-top: 30px;
+            border-left: 5px solid var(--secondary-color);
+            padding-left: 15px;
+        }
+
+        h4 {
+            font-size: 1.1em;
+            color: var(--primary-color);
+            margin-top: 20px;
+        }
+        
+        /* Content Card Styling */
+        .content-card {
+            background-color: var(--card-bg);
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .content-card:hover {
+            transform: translateY(-5px); 
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Advanced Section Styling */
+        .advanced-section {
+            background-color: var(--advanced-bg);
+            border: 1px dashed var(--secondary-color);
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        .advanced-section h4 {
+            color: #1a1a1a;
+            font-weight: 700;
+            border-bottom: 2px dotted var(--secondary-color);
+            padding-bottom: 5px;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        /* Ribbon Tab Explanation Styling */
+        .tabs-explanation {
+            background-color: var(--tabs-bg);
+            border: 1px solid #f0e0e9;
+            padding: 15px;
+            margin-top: 25px;
+            border-radius: 5px;
+        }
+
+        .tabs-explanation h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 10px;
+            border-left: none;
+            padding-left: 0;
+            font-size: 1.4em;
+            border-bottom: 1px dashed #ccc;
+        }
+
+        .tabs-explanation ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .tabs-explanation li {
+            margin-bottom: 10px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .tabs-explanation li strong {
+            color: #4b0082; /* Darker color for tab names */
+        }
+
+
+        ul, ol {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .key-feature {
+            background-color: #e9f5ff;
+            border-left: 4px solid var(--secondary-color);
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+        
+        /* Specific App Styling */
+        .word h2 { color: var(--ms-word-color); border-bottom-color: var(--ms-word-color); }
+        .excel h2 { color: var(--ms-excel-color); border-bottom-color: var(--ms-excel-color); }
+        .powerpoint h2 { color: var(--ms-powerpoint-color); border-bottom-color: var(--ms-powerpoint-color); }
+
+        /* Footer Styling */
+        .footer {
+            background-color: var(--footer-bg);
+            color: var(--footer-text);
+            padding: 30px 20px;
+            text-align: center;
+            margin-top: 40px;
+            border-top: 5px solid var(--secondary-color);
+        }
+
+        .footer p {
+            margin: 5px 0;
+            font-size: 0.9em;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            .container {
+                padding: 10px;
+            }
+            h3 {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MS Office Productivity Suite Course</h1>
+        <p>Mastering Microsoft Word, Excel, and PowerPoint from foundational skills to advanced professional techniques.</p>
+    </header>
+
+    <main class="container">
+        
+        <div class="content-card word">
+            <h2>1. MS Word (Word Processing)</h2>
+            <p>Word processing software is used to create, edit, format, store, and print documents. Microsoft Word is the most commonly used application.</p>
+
+            <h3>Basic Skills and Essential Commands</h3>
+            <ul>
+                <li>**Text Editing:** Inserting, deleting, and modifying text.</li>
+                <li>**Formatting:** Changing font size, style, color, margins, and line spacing.</li>
+                <li>**Templates:** Utilizing pre-designed structures for resumes, letters, and reports.</li>
+                <li>**Essential Shortcuts:** `Ctrl + S` (Save), `Ctrl + C` (Copy), `Ctrl + P` (Print).</li>
+            </ul>
+
+            <div class="tabs-explanation">
+                <h3>Word Ribbon Tabs Explained</h3>
+                <ul>
+                    <li><strong>Home:</strong> Contains the most frequently used commands. This is where you find the **Clipboard** (Cut/Copy/Paste), **Font** (Bold/Italic/Size), **Paragraph** (Alignment/Indentation), and **Styles** (Heading 1, Normal) groups.</li>
+                    <li><strong>Insert:</strong> Used to add non-textual elements into your document, such as **Pages** (Blank Page, Page Break), **Tables**, **Illustrations** (Pictures, Shapes), **Links** (Hyperlinks), and **Header & Footer**.</li>
+                    <li><strong>Design:</strong> Allows you to manage the overall aesthetic look of the document, including **Themes, Colors**, and **Document Formatting**. Also includes **Watermark** and **Page Borders**.</li>
+                    <li><strong>Layout:</strong> Controls the page setup and physical arrangement of your document. This includes **Margins, Orientation** (Portrait/Landscape), **Size, Columns**, and **Page/Section Breaks**.</li>
+                    <li><strong>References:</strong> Essential for academic or formal documents. It contains tools for managing **Table of Contents (TOC), Footnotes/Endnotes**, and **Citations & Bibliography**.</li>
+                    <li><strong>Mailings:</strong> Dedicated entirely to the **Mail Merge Mastery** process, allowing you to create personalized letters, envelopes, and labels in bulk.</li>
+                    <li><strong>Review:</strong> Contains tools for collaboration and proofreading, such as **Spelling & Grammar, Thesaurus**, **Track Changes**, and **Comments**.</li>
+                    <li><strong>View:</strong> Allows you to change how you see the document, including different views (Read Mode, Print Layout), **Zoom** settings, and **Window** arrangement.</li>
+                </ul>
+            </div>
+
+            <div class="advanced-section">
+                <h4>Advanced Applications and Concepts</h4>
+                <ul>
+                    <li>**Document Security:** Applying **password protection** to restrict who can open or modify the document.</li>
+                    <li>**Collaboration Tools:** Using **Track Changes** to monitor revisions made by multiple users and **Comments** for feedback.</li>
+                    <li>**Auto-Generation:** Creating an automatic **Table of Contents (TOC)** based on heading styles.</li>
+                    <li>**Mail Merge Mastery:** Generating personalized documents (letters, labels, envelopes) for large mailing lists from an external data source (like Excel).</li>
+                    <li>**Page Layout:** Mastering sections breaks, watermarks, and custom headers/footers for professional documents.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-card excel">
+            <h2>2. MS Excel (Data and Spreadsheets)</h2>
+            <p>Spreadsheet software is used to organize, analyze, and store data in tabular form (rows and columns). It is essential for accounting, budgeting, and data analysis.</p>
+
+            <h3>Basic Skills and Core Concepts</h3>
+            <ul>
+                <li>**Workbook and Worksheet:** Understanding file and page structure.</li>
+                <li>**Cell and Cell Referencing:** How to identify and use cell addresses (e.g., A1).</li>
+                <li>**Formula Bar:** Entering and viewing data and formulas.</li>
+                <li>**Basic Functions:** Using `SUM()`, `AVERAGE()`, `COUNT()`, and simple arithmetic operations.</li>
+            </ul>
+            
+            <p class="key-feature">
+                All formulas in Excel **must begin with an equals sign** (`=`), followed by the function or calculation to be performed. Example: `=SUM(A1:A10)`.
+            </p>
+
+            <div class="tabs-explanation">
+                <h3>Excel Ribbon Tabs Explained</h3>
+                <ul>
+                    <li><strong>Home:</strong> Contains general data manipulation and formatting tools, including **Clipboard, Font, Alignment, Number** (Currency, Percent, Decimal), and **Styles** (Conditional Formatting).</li>
+                    <li><strong>Insert:</strong> Focuses on adding objects to the sheet, primarily **Tables, Illustrations** (Pictures, Shapes), and the various types of **Charts** (Column, Line, Pie).</li>
+                    <li><strong>Page Layout:</strong> Controls how the workbook will be printed, including **Themes, Margins, Orientation, Size**, and **Print Area**.</li>
+                    <li><strong>Formulas:</strong> The dedicated tab for all calculations and logic. It features the **Function Library** (where you find `IF`, `VLOOKUP`, etc.) and tools for **Formula Auditing** (Trace Precedents/Dependents).</li>
+                    <li><strong>Data:</strong> The powerhouse for data management and analysis. It contains tools for **Get & Transform Data** (importing), **Sorting & Filtering**, and **Data Tools** (Data Validation, Text to Columns).</li>
+                    <li><strong>Review:</strong> Used for collaboration and security, containing **Spelling, Protect Sheet/Workbook** (Data Security), and **Comments**.</li>
+                    <li><strong>View:</strong> Used to change how the sheet is displayed, including **Workbook Views** (Normal, Page Break Preview), **Zoom**, and **Window** management (**Freeze Panes**).</li>
+                </ul>
+            </div>
+
+            <div class="advanced-section">
+                <h4>Advanced Applications and Concepts</h4>
+                <ul>
+                    <li>**Logical Functions:** Using the powerful **`IF()`** function and nested `IF` statements to perform complex conditional testing.</li>
+                    <li>**Lookup & Reference:** Introduction to advanced functions like **`VLOOKUP`** and **`HLOOKUP`** for searching and retrieving data across worksheets.</li>
+                    <li>**Data Analysis Tools:** Applying **Conditional Formatting** to highlight data based on rules, and mastering **Sorting and Filtering**.</li>
+                    <li>**Visualization:** Generating professional **Charts and Graphs** (Bar, Pie, Line) and customizing chart elements for reporting.</li>
+                    <li>**Data Security:** Protecting cells, worksheets, and workbooks with passwords.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-card powerpoint">
+            <h2>3. MS PowerPoint (Presentations)</h2>
+            <p>Presentation software is used to create a series of slides to convey information visually during a presentation. It helps in creating engaging lectures, reports, and marketing materials.</p>
+
+            <h3>Basic Skills and Key Elements</h3>
+            <ul>
+                <li>**Slide Creation:** Adding and arranging new slides with different layouts.</li>
+                <li>**Content Insertion:** Adding text, images, and simple shapes.</li>
+                <li>**Design Templates:** Applying pre-designed themes for a consistent look.</li>
+                <li>**Animations & Transitions:** Applying movement effects to elements and between slides.</li>
+            </ul>
+
+            <div class="tabs-explanation">
+                <h3>PowerPoint Ribbon Tabs Explained</h3>
+                <ul>
+                    <li><strong>Home:</strong> The main editing tab, featuring tools for adding new slides, managing slide layouts, and formatting text (Font, Paragraph).</li>
+                    <li><strong>Insert:</strong> Allows adding elements like **Tables, Pictures, Shapes, Charts**, and essential **Video and Audio** media files.</li>
+                    <li><strong>Design:</strong> Dedicated to the visual appearance of the slides. This includes applying **Themes, Color Variants**, and modifying the background and master slides.</li>
+                    <li><strong>Transitions:** Manages the motion effect that happens when you move from **one slide to the next** during a show. Here you set the effect type and timing/sound.</li>
+                    <li><strong>Animations:** Manages the motion effect applied to **individual objects** (text, pictures, charts) on a single slide. Includes entrance, emphasis, and exit effects.</li>
+                    <li><strong>Slide Show:</strong> Contains all the controls for running the presentation, including starting from the beginning or current slide, setting up custom slide shows, and recording narration.</li>
+                    <li><strong>Review:</strong> Includes **Spelling**, **Language**, and tools for **Comments** when collaborating on the presentation.</li>
+                    <li><strong>View:</strong> Used to change the screen display, such as **Presentation Views** (Normal, Outline, Slide Sorter) and **Master Views** (Slide Master, Handout Master).</li>
+                </ul>
+            </div>
+            
+            <div class="advanced-section">
+                <h4>Advanced Applications and Concepts</h4>
+                <ul>
+                    <li>**Master Slide:** Using the **Slide Master** to define global styles (logos, fonts, colors) across the entire presentation, ensuring brand consistency.</li>
+                    <li>**Multimedia Integration:** Embedding and controlling playback of **Video and Audio** files, including setting trigger points and loop options.</li>
+                    <li>**Interactivity & Navigation:** Adding **Hyperlinks and Action Buttons** to jump between slides or external resources for non-linear presentations.</li>
+                    <li>**Customization:** Applying complex custom animation paths, timing, and using presenter view features.</li>
+                </ul>
+            </div>
+        </div>
+        
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Brijesh Singh: Computer Science Resource. All Rights Reserved.</p>
+            <p>MS Office Course: Your path to professional productivity.</p>
+        </div>
+    </footer>
+</body>
+</html>
