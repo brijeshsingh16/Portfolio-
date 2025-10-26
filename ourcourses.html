@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Offerings | Brijesh Singh</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS variables for consistent theming */
+        :root {
+            --primary-color: #0077b6; /* Deep Blue */
+            --secondary-color: #00b4d8; /* Light Blue */
+            --text-color: #333;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --footer-bg: #2c3e50;
+            --footer-text: #ecf0f1;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            text-align: justify; 
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-bottom: 20px;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        /* Main Section Headings */
+        h2 {
+            font-size: 1.8em;
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        /* Course Title Heading */
+        h3 {
+            font-size: 1.6em;
+            color: #1a1a1a;
+            margin-top: 30px;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+            background-color: #f0f8ff;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-radius: 4px;
+        }
+        
+        /* Sub-headings for Course Content */
+        h4 {
+            font-size: 1.2em;
+            color: var(--secondary-color);
+            margin-top: 20px;
+        }
+
+        /* Course Card Styling */
+        .course-card {
+            background-color: var(--card-bg);
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .course-card:hover {
+            transform: translateY(-5px); 
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        ul, ol {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .key-feature {
+            background-color: #e9f5ff;
+            border-left: 4px solid var(--secondary-color);
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+
+        /* Footer Styling */
+        .footer {
+            background-color: var(--footer-bg);
+            color: var(--footer-text);
+            padding: 30px 20px;
+            text-align: center;
+            margin-top: 40px;
+            border-top: 5px solid var(--secondary-color);
+        }
+
+        .footer p {
+            margin: 5px 0;
+            font-size: 0.9em;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            .container {
+                padding: 10px;
+            }
+            h3 {
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Our Professional Course Offerings</h1>
+        <p>Build your skills from foundational literacy to modern web development.</p>
+    </header>
+
+    <main class="container">
+        
+        <!-- Introductory Message -->
+        <div class="course-card">
+            <h2>Start Your Learning Journey</h2>
+            <p>We provide a comprehensive range of computer education courses designed to build foundational knowledge, enhance professional skills, and prepare students for careers in technology. Our programs are tailored to ensure practical application and industry relevance. Choose the path that fits your goals!</p>
+        </div>
+
+        <!-- 1. CCC Course Card (Separated) -->
+        <div class="course-card">
+            <h3><a href="ccc.html">1. CCC (Course on Computer Concepts)</a></h3>
+            
+            <p class="key-feature">
+                **The Digital Literacy Foundation:** This course is focused on achieving essential digital literacy, making it ideal for beginners, students, and job-seekers preparing for government and competitive exams where computer knowledge is mandatory.
+            </p>
+            
+            <h4>Key Modules:</h4>
+            <ul>
+                <li>Introduction to **Computer Hardware and Software** fundamentals.</li>
+                <li>Understanding **Operating Systems** (basic usage and navigation).</li>
+                <li>**Digital Finance & Services:** Basic Internet Usage, Email communication, and securing online transactions.</li>
+                <li>Fundamentals of **Word Processing** for basic document creation.</li>
+                <li>Understanding the **Impact of IT** and the importance of cybersecurity.</li>
+            </ul>
+        </div>
+        
+        <!-- 2. CCA Course Card (Separated and Renumbered) -->
+        <div class="course-card">
+            <h3><a href="cca.html">2. CCA (Computer Application Basics)</a></h3>
+            
+            <p class="key-feature">
+                **Core Application Skills:** This program goes a step beyond CCC, focusing on practical application and in-depth software usage required for office work and administrative tasks. It emphasizes efficiency and hands-on skill development.
+            </p>
+            
+            <h4>What You Will Learn:</h4>
+            <ul>
+                <li>Mastering **File and Folder Management** for organizational efficiency.</li>
+                <li>Advanced use of **Spreadsheets** for simple calculations and data recording.</li>
+                <li>Practical application of OS features and keyboard shortcuts for increased speed.</li>
+                <li>Working with **Peripherals** (Printers, Scanners) and troubleshooting basic issues.</li>
+                <li>Introduction to presentation software for simple visual communication.</li>
+            </ul>
+        </div>
+
+        <!-- 3. MS Office Course Card (Renumbered) -->
+        <div class="course-card">
+            <h3><a href="msoffice.html">3. MS Office Suite Proficiency</a></h3>
+            
+            <p class="key-feature">
+                **Professional Productivity Mastery:** Master the industry-standard productivity tools essential for any professional environment. Our hands-on course ensures you can efficiently create, analyze, and present information with maximum impact.
+            </p>
+            
+            <h4>Core Applications Covered:</h4>
+            <ul>
+                <li>**Microsoft Word (Document Creation):** Advanced formatting, creating professional templates, mail merge, and document security.</li>
+                <li>**Microsoft Excel (Data Analysis):** Comprehensive data entry, complex formulas, functions (VLOOKUP, IF, Pivot Tables), charting, and data visualization.</li>
+                <li>**Microsoft PowerPoint (Presentation Design):** Creating engaging, professional presentations, mastering slide transitions, incorporating multimedia, and effective delivery techniques.</li>
+                <li>**Microsoft Access (Database Introduction):** Basic database creation, form design, running queries, and generating reports.</li>
+            </ul>
+        </div>
+
+        <!-- 4. Front-End Development Course Card (Renumbered) -->
+        <div class="course-card">
+            <h3><a href="#">4. Front-End Development Course</a></h3>
+            
+            <p class="key-feature">
+                **Become a Web Creator:** Dive into the world of web creation and learn how to build dynamic, responsive, and visually stunning user interfaces (UIs). This program prepares you to launch a career as a sought-after Front-End Web Developer.
+            </p>
+            
+            <h4>Program Outline:</h4>
+            <ol>
+                <li>**HTML5:** Structuring the core content and semantics of modern web pages.</li>
+                <li>**CSS3:** Deep dive into styling, advanced layouts (Flexbox & Grid), responsive design for all devices, and interactive animations.</li>
+                <li>**JavaScript (ES6+):** Programming fundamentals, working with the Document Object Model (DOM), handling events, and adding complex interactivity and logic.</li>
+                <li>**Version Control (Git Basics):** Introduction to collaborative development and code management.</li>
+                <li>**Project Work:** Building a professional portfolio of real-world, fully responsive websites.</li>
+            </ol>
+        </div>
+
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Brijesh Singh: Computer Science Resource. All Rights Reserved.</p>
+            <p>Enroll today and transform your future with practical technology skills.</p>
+        </div>
+    </footer>
+</body>
+</html>
