@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Task Manager</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #74ebd5, #acb6e5);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .task-input {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        input {
+            flex: 1;
+            padding: 12px 15px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 10px rgba(0,123,255,0.2);
+        }
+
+        button {
+            padding: 12px 18px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            color: white;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        #addTaskBtn {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+        }
+
+        #addTaskBtn:hover {
+            transform: scale(1.05);
+        }
+
+        .clear-btn {
+            background: linear-gradient(135deg, #ff512f, #dd2476);
+            margin-top: 15px;
+        }
+
+        .clear-btn:hover {
+            transform: scale(1.05);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        li {
+            background: #f1f1f1;
+            padding: 15px 20px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        li:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        li.completed {
+            text-decoration: line-through;
+            opacity: 0.6;
+        }
+
+        li button {
+            background: #ff4b5c;
+            color: white;
+            border-radius: 8px;
+            padding: 5px 10px;
+            font-size: 0.9rem;
+        }
+
+        li button:hover {
+            background: #ff1e3c;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            input {
+                font-size: 0.95rem;
+            }
+
+            li {
+                padding: 12px 15px;
+                font-size: 0.95rem;
+            }
+
+            button {
+                padding: 10px 15px;
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Task Manager</h1>
+
+        <div class="tasks">
+            <div class="task-input">
+                <input type="text" id="taskInput" placeholder="Add new task">
+                <button id="addTaskBtn">Add</button>
+            </div>
+            <ul id="taskList"></ul>
+            <button id="clearAllBtn" class="clear-btn">Clear All Tasks</button>
+        </div>
+    </div>
+
+    <script>
+        const addTaskBtn = document.getElementById('addTaskBtn');
+        const taskInput = document.getElementById('taskInput');
+        const taskList = document.getElementById('taskList');
+        const clearAllBtn = document.getElementById('clearAllBtn');
+
+        let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+        renderTasks();
+
+        addTaskBtn.addEventListener('click', addTask);
+        taskInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') addTask();
+        });
+
+        clearAllBtn.addEventListener('click', () => {
+            tasks = [];
+            saveTasks();
+            renderTasks();
+        });
+
+        function addTask() {
+            const taskText = taskInput.value.trim();
+            if (taskText === "") return;
+            if (tasks.some(t => t.text === taskText)) {
+                alert("Task already exists!");
+                return;
+            }
+
+            tasks.push({ text: taskText, completed: false });
+            saveTasks();
+            renderTasks();
+            taskInput.value = '';
+        }
+
+        function saveTasks() {
+            localStorage.setItem('tasks', JSON.stringify(tasks));
+        }
+
+        function renderTasks() {
+            taskList.innerHTML = '';
+            tasks.forEach((task, index) => {
+                const li = document.createElement('li');
+
+                const span = document.createElement('span');
+                span.textContent = task.text;
+                li.appendChild(span);
+
+                if (task.completed) li.classList.add('completed');
+
+                li.addEventListener('click', () => {
+                    tasks[index].completed = !tasks[index].completed;
+                    saveTasks();
+                    renderTasks();
+                });
+
+                const deleteBtn = document.createElement('button');
+                deleteBtn.textContent = 'Delete';
+                deleteBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    tasks.splice(index, 1);
+                    saveTasks();
+                    renderTasks();
+                });
+
+                li.appendChild(deleteBtn);
+                taskList.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>
